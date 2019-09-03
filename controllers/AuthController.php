@@ -4,6 +4,7 @@
 namespace app\modules\auth\controllers;
 
 
+use app\modules\auth\controllers\actions\AuthLogOutAction;
 use app\modules\auth\controllers\actions\AuthRequestPasswordResetAction;
 use app\modules\auth\controllers\actions\AuthSignInAction;
 use app\modules\auth\controllers\actions\AuthSignUpAction;
@@ -52,6 +53,7 @@ class AuthController extends BaseController
             ],
             'sign-up' => ['class' => AuthSignUpAction::class],
             'sign-in' => ['class' => AuthSignInAction::class],
+            'logout' => ['class' => AuthLogOutAction::class],
             'request-password-reset' => ['class' => AuthRequestPasswordResetAction::class],
             'password-reset' => ['class' => ResetPasswordAction::class],
         ];
