@@ -8,7 +8,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\modules\auth\models\UserSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Module::t('modules/auth', 'Base Users');
+$this->title = Module::t('auth', 'Users');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="base-user-index">
@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a(Module::t('modules/auth', 'Create Base User'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Module::t('auth', 'Create User'), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -25,18 +25,46 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+            //['class' => 'yii\grid\SerialColumn'],
 
-            'id',
-            'username',
-            'name',
-            'authKey',
-            'password_hash',
+            [
+                'attribute' => 'id',
+                'options' => ['width' => '20']
+            ],
+            [
+                'attribute' => 'username',
+                'options' => ['width' => '100']
+            ],
+            [
+                'attribute' => 'name',
+                'options' => ['width' => '150']
+
+            ],
+            [
+                'attribute' => 'email',
+                'options' => ['width' => '150'],
+                'format' =>  ['email'],
+            ],
+            [
+                'attribute' => 'status',
+                'options' => ['width' => '100'],
+                'content' => function($data){
+                    return $data->status === 0 ? Module::t('auth', 'Deleted') : Module::t('auth', 'Active');
+                }
+            ],
+            //'authKey',
+            //'password_hash',
             //'password_reset_token',
-            //'email:email',
-            //'status',
-            //'created_at',
-            //'updated_at',
+            [
+                'attribute' => 'created_at',
+                'format' =>  ['date', 'dd.MM.Y HH:mm'],
+                'options' => ['width' => '160']
+            ],
+            [
+                'attribute' => 'updated_at',
+                'format' =>  ['date', 'dd.MM.Y HH:mm'],
+                'options' => ['width' => '160']
+            ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

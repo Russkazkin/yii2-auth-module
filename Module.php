@@ -27,18 +27,18 @@ class Module extends \yii\base\Module
 
     public function registerTranslations()
     {
-        Yii::$app->i18n->translations['modules/auth/*'] = [
+        Yii::$app->i18n->translations['auth'] = [
             'class' => 'yii\i18n\PhpMessageSource',
             'sourceLanguage' => 'en-US',
             'basePath' => '@app/modules/auth/messages',
             'fileMap' => [
-                'modules/auth/' => 'auth.php',
+                'auth' => 'auth.php',
             ],
         ];
     }
 
     public static function t($category, $message, $params = [], $language = null)
     {
-        return Yii::t('modules/auth/' . $category, $message, $params, $language);
+        return Yii::t($category, $message, $params, $language);
     }
 }

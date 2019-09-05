@@ -2,6 +2,7 @@
 
 namespace app\modules\auth\models\base;
 
+use app\modules\auth\Module;
 use Yii;
 
 /**
@@ -51,16 +52,16 @@ class BaseUser extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => Yii::t('app', 'ID'),
-            'username' => Yii::t('app', 'Username'),
-            'name' => Yii::t('app', 'Name'),
-            'authKey' => Yii::t('app', 'Auth Key'),
-            'password_hash' => Yii::t('app', 'Password Hash'),
-            'password_reset_token' => Yii::t('app', 'Password Reset Token'),
-            'email' => Yii::t('app', 'Email'),
-            'status' => Yii::t('app', 'Status'),
-            'created_at' => Yii::t('app', 'Created At'),
-            'updated_at' => Yii::t('app', 'Updated At'),
+            'id' => Module::t('auth', 'ID'),
+            'username' => Module::t('auth', 'Username'),
+            'name' => Module::t('auth', 'Name'),
+            'authKey' => Module::t('auth', 'Auth Key'),
+            'password_hash' => Module::t('auth', 'Password Hash'),
+            'password_reset_token' => Module::t('auth', 'Password Reset Token'),
+            'email' => Module::t('auth', 'Email'),
+            'status' => Module::t('auth', 'Status'),
+            'created_at' => Module::t('auth', 'Created At'),
+            'updated_at' => Module::t('auth', 'Updated At'),
         ];
     }
 }
