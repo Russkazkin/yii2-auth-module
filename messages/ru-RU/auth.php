@@ -10,5 +10,12 @@
     'Delete' => 'Удалить',
     'Deleted' => 'Удален',
     'Active' => 'Активен',
-    'Update User: {name}' => 'Редактирование пользователя: {name}'
+    'Update User: {name}' => 'Редактирование пользователя: {name}',
+    'Sign In' => 'Вход',
+    'Please fill out the following fields to login:' => 'Для входа заполните, пожалуйста, все поля:',
+    'Password' => 'Пароль',
+    'Remember Me' => 'Запомнить',
+    'If you forgot your password you can ' => 'Если вы забыли пароль, вы можете его ',
+    'reset it' => 'сбросить',
+    'Login' => 'Войти',
 ];

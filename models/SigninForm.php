@@ -4,6 +4,7 @@
 namespace app\modules\auth\models;
 
 
+use app\modules\auth\Module;
 use Yii;
 use yii\base\Model;
 
@@ -74,5 +75,17 @@ class SigninForm extends Model
         }
 
         return $this->_user;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function attributeLabels()
+    {
+        return [
+            'username' => Module::t('auth', 'Username'),
+            'password' => Module::t('auth', 'Password'),
+            'rememberMe' => Module::t('auth', 'Remember Me'),
+        ];
     }
 }
