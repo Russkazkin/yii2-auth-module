@@ -28,7 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
             <div style="color:#999;margin:1em 0">
                 <?= Module::t('auth', 'If you forgot your password you can '); ?><?= Html::a(Module::t('auth', 'reset it'),
-                    ['site/request-password-reset']) ?>.
+                    ['auth/request-password-reset']) ?>.
             </div>
 
             <div class="form-group">

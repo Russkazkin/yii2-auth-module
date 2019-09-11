@@ -19,5 +19,8 @@
     'reset it' => 'сбросить',
     'Login' => 'Войти',
     'Sign Up' => 'Регистрация',
-    'Please fill out the following fields to signup:' => 'Для регистрации, пожалуйста, заполните все поля формы:'
+    'Please fill out the following fields to signup:' => 'Для регистрации, пожалуйста, заполните все поля формы:',
+    'Request password reset' => 'Запрос сброса пароля',
+    'Please fill out your email. A link to reset password will be sent there.' => 'Пожалуйста, заполните ваш адрес электронной почты. Ссылка на сброс пароля будет отправлена на этот адрес.',
+    'Send' => 'Отправить',
 ];
