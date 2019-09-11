@@ -4,6 +4,7 @@
 namespace app\modules\auth\models;
 
 
+use app\modules\auth\Module;
 use yii\base\Model;
 
 /**
@@ -60,5 +61,17 @@ class SignupForm extends Model
         $user->generateAuthKey();
 
         return $user->save() ? $user : null;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function attributeLabels()
+    {
+        return [
+            'username' => Module::t('auth', 'Username'),
+            'name' => Module::t('auth', 'Name'),
+            'password' => Module::t('auth', 'Password'),
+        ];
     }
 }

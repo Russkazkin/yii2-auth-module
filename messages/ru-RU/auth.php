@@ -18,4 +18,6 @@
     'If you forgot your password you can ' => 'Если вы забыли пароль, вы можете его ',
     'reset it' => 'сбросить',
     'Login' => 'Войти',
+    'Sign Up' => 'Регистрация',
+    'Please fill out the following fields to signup:' => 'Для регистрации, пожалуйста, заполните все поля формы:'
 ];
