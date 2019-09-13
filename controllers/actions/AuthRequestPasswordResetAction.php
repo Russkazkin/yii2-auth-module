@@ -6,6 +6,7 @@ namespace app\modules\auth\controllers\actions;
 
 use app\modules\auth\controllers\base\BaseAction;
 use app\modules\auth\models\PasswordResetRequestForm;
+use app\modules\auth\Module;
 use Yii;
 
 class AuthRequestPasswordResetAction extends BaseAction
@@ -19,11 +20,11 @@ class AuthRequestPasswordResetAction extends BaseAction
         $model = new PasswordResetRequestForm();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             if ($model->sendEmail()) {
-                Yii::$app->session->setFlash('success', 'Check your email for further instructions.');
+                Yii::$app->session->setFlash('success', Module::t('auth', 'Check your email for further instructions.'));
 
                 return $this->controller->goHome();
             } else {
-                Yii::$app->session->setFlash('error', 'Sorry, we are unable to reset password for the provided email address.');
+                Yii::$app->session->setFlash('error', Module::t('auth', 'Sorry, we are unable to reset password for the provided email address.'));
             }
         }
 

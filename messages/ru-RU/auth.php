@@ -23,4 +23,8 @@
     'Request password reset' => 'Запрос сброса пароля',
     'Please fill out your email. A link to reset password will be sent there.' => 'Пожалуйста, заполните ваш адрес электронной почты. Ссылка на сброс пароля будет отправлена на этот адрес.',
     'Send' => 'Отправить',
+    'Check your email for further instructions.' => 'На ваш email отправлено письмо с инструкциями по сбросу пароля',
+    'Sorry, we are unable to reset password for the provided email address.' => 'К сожалению, мы не можем сбросить пароль для предоставленного вами адреса email',
+    'Hello {name}' => 'Здравствуйте, {name}',
+    'Follow the link below to reset your password:' => 'Перейдите по ссылке ниже, чтобы сбросить пароль:',
 ];
