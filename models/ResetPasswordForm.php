@@ -4,6 +4,7 @@
 namespace app\modules\auth\models;
 
 
+use app\modules\auth\Module;
 use yii\base\InvalidArgumentException;
 use yii\base\Model;
 
@@ -60,6 +61,16 @@ class ResetPasswordForm extends Model
         $user->removePasswordResetToken();
 
         return $user->save(false);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function attributeLabels()
+    {
+        return [
+            'password' => Module::t('auth', 'Password'),
+        ];
     }
 
 }

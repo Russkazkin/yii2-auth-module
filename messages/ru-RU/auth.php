@@ -27,4 +27,7 @@
     'Sorry, we are unable to reset password for the provided email address.' => 'К сожалению, мы не можем сбросить пароль для предоставленного вами адреса email',
     'Hello {name}' => 'Здравствуйте, {name}',
     'Follow the link below to reset your password:' => 'Перейдите по ссылке ниже, чтобы сбросить пароль:',
+    'Reset password' => 'Сброс пароля',
+    'Please choose your new password:' => 'Пожалуйста, выберите ваш новый пароль:',
+    'Save' => 'Сохранить',
 ];
