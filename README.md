@@ -9,6 +9,11 @@ Install
         'auth' => [
             'class' => 'app\modules\auth\Module'
         ],
+* Add this to console.php 'modules' section:
+
+        'auth' => [
+            'class' => 'app\modules\auth\Module'
+        ],
 * Add this to web.php and console.php 'components' section:
 
         'authManager' => [
@@ -26,5 +31,9 @@ Install
             'migrationPath' => '@yii/rbac/migrations',
             'migrationTable' => 'migration_rbac',
         ],
+* Add this to console.php 'bootstrap' section:
+
+        'auth'
 
 and apply these migrations.
+

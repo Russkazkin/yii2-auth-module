@@ -3,11 +3,13 @@
 namespace app\modules\auth;
 
 use Yii;
+use yii\base\BootstrapInterface;
+use yii\console\Application;
 
 /**
  * auth module definition class
  */
-class Module extends \yii\base\Module
+class Module extends \yii\base\Module implements BootstrapInterface
 {
     /**
      * {@inheritdoc}
@@ -21,8 +23,13 @@ class Module extends \yii\base\Module
     {
         parent::init();
         $this->registerTranslations();
+    }
 
-        // custom initialization code goes here
+    public function bootstrap($app)
+    {
+        if ($app instanceof Application) {
+            $this->controllerNamespace = 'app\modules\auth\commands';
+        }
     }
 
     public function registerTranslations()
