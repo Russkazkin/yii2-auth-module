@@ -12,7 +12,7 @@ class M190823074020CreateUserTable extends Migration
      */
     public function safeUp()
     {
-        $this->createTable('user', [
+        $this->createTable('auth_user', [
             'id' => $this->primaryKey(),
             'username' => $this->string(48)->notNull()->unique(),
             'name' => $this->string(48)->notNull(),

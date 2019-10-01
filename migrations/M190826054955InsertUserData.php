@@ -16,7 +16,7 @@ class M190826054955InsertUserData extends Migration
      */
     public function safeUp()
     {
-        $this->insert('user', [
+        $this->insert('auth_user', [
             'username' => 'admin',
             'name' => 'Admin',
             'authKey' => 'test100key',
@@ -26,7 +26,7 @@ class M190826054955InsertUserData extends Migration
             'created_at' => strtotime('now'),
             'updated_at' => strtotime('now'),
         ]);
-        $this->insert('user', [
+        $this->insert('auth_user', [
             'username' => 'user',
             'name' => 'User',
             'authKey' => 'test101key',
@@ -36,7 +36,7 @@ class M190826054955InsertUserData extends Migration
             'created_at' => strtotime('now'),
             'updated_at' => strtotime('now'),
         ]);
-        $this->insert('user', [
+        $this->insert('auth_user', [
             'username' => 'editor',
             'name' => 'Editor',
             'authKey' => 'test102key',
