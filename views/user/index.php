@@ -57,12 +57,12 @@ $this->params['breadcrumbs'][] = $this->title;
             //'password_reset_token',
             [
                 'attribute' => 'created_at',
-                'format' =>  ['date', 'dd.MM.Y HH:mm'],
+                'format' =>  'date',
                 'options' => ['width' => '160']
             ],
             [
                 'attribute' => 'updated_at',
-                'format' =>  ['date', 'dd.MM.Y HH:mm'],
+                'format' =>  'date',
                 'options' => ['width' => '160']
             ],
 
