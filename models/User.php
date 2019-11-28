@@ -194,4 +194,9 @@ class User extends BaseUser implements IdentityInterface
     {
         return $this->getAuthKey() === $authKey;
     }
+
+    public function getName()
+    {
+        return $this->name;
+    }
 }
