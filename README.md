@@ -14,6 +14,17 @@ Install
         'auth' => [
             'class' => 'app\modules\auth\Module'
         ],
+* Add this to web.php ''i18n' => ['translations'] section:
+        
+        'blog*' => [
+            'class' => PhpMessageSource::class,
+            'basePath' => '@app/modules/auth/messages',
+            'fileMap' => [
+                'auth' => 'auth.php'
+            ]
+        ],
+       
+
 * Add this to web.php and console.php 'components' section:
 
         'authManager' => [
