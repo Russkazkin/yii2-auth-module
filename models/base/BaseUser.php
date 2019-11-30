@@ -52,16 +52,16 @@ class BaseUser extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => Module::t('auth', 'ID'),
-            'username' => Module::t('auth', 'Username'),
-            'name' => Module::t('auth', 'Name'),
-            'authKey' => Module::t('auth', 'Auth Key'),
-            'password_hash' => Module::t('auth', 'Password Hash'),
-            'password_reset_token' => Module::t('auth', 'Password Reset Token'),
-            'email' => Module::t('auth', 'Email'),
-            'status' => Module::t('auth', 'Status'),
-            'created_at' => Module::t('auth', 'Created At'),
-            'updated_at' => Module::t('auth', 'Updated At'),
+            'id' => Yii::t('auth', 'ID'),
+            'username' => Yii::t('auth', 'Username'),
+            'name' => Yii::t('auth', 'Name'),
+            'authKey' => Yii::t('auth', 'Auth Key'),
+            'password_hash' => Yii::t('auth', 'Password Hash'),
+            'password_reset_token' => Yii::t('auth', 'Password Reset Token'),
+            'email' => Yii::t('auth', 'Email'),
+            'status' => Yii::t('auth', 'Status'),
+            'created_at' => Yii::t('auth', 'Created At'),
+            'updated_at' => Yii::t('auth', 'Updated At'),
         ];
     }
 }
