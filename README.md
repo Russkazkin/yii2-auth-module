@@ -14,6 +14,13 @@ Install
         'auth' => [
             'class' => 'app\modules\auth\Module'
         ],
+* Replace user component config in web.php with next code:
+
+        'user' => [
+            'identityClass' => 'app\modules\auth\models\User',
+            'enableAutoLogin' => true,
+            'loginUrl' => ['auth/sign-in'],
+        ],
 * Add this to web.php ''i18n' => ['translations'] section:
         
         'blog*' => [
