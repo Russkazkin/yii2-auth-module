@@ -50,6 +50,16 @@ class RbacController extends Controller
 
         echo 'Permissions added...' . PHP_EOL;
 
+        $auth->addChild($user, $createArticle);
+        $auth->addChild($user, $editOwnArticle);
+        $auth->addChild($user, $deleteOwnArticle);
+        $auth->addChild($editor, $user);
+        $auth->addChild($editor, $editAllArticles);
+        $auth->addChild($admin, $editor);
+        $auth->addChild($admin, $adminArticlesPermissions);
+
+        echo 'Permissions assigned...' . PHP_EOL;
+
         echo 'All tasks complete' . PHP_EOL;
 
     }
