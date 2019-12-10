@@ -27,6 +27,7 @@ class Module extends \yii\base\Module implements BootstrapInterface
 
     public function bootstrap($app)
     {
+        //To execute commands in docker container type docker-compose exec php php yii auth/{controller}/{action}
         if ($app instanceof Application) {
             $this->controllerNamespace = 'app\modules\auth\commands';
         }
