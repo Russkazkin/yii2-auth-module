@@ -60,6 +60,12 @@ class RbacController extends Controller
 
         echo 'Permissions assigned...' . PHP_EOL;
 
+        $auth->assign($admin, 1);
+        $auth->assign($user, 2);
+        $auth->assign($editor, 3);
+
+        echo 'Roles assigned...' . PHP_EOL;
+
         echo 'All tasks complete' . PHP_EOL;
 
     }
