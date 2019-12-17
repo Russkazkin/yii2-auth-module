@@ -5,6 +5,7 @@ namespace app\modules\auth\models;
 
 
 use app\modules\auth\Module;
+use Yii;
 use yii\base\Model;
 
 /**
@@ -59,8 +60,13 @@ class SignupForm extends Model
         $user->name = $this->name;
         $user->setPassword($this->password);
         $user->generateAuthKey();
+        $user->save(false);
 
-        return $user->save() ? $user : null;
+        $auth = Yii::$app->authManager;
+        $authorRole = $auth->getRole('user');
+        $auth->assign($authorRole, $user->getId());
+
+        return $user;
     }
 
     /**
