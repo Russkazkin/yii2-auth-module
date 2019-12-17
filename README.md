@@ -7,7 +7,10 @@ Install
 * Add this to web.php 'modules' section:
 
         'auth' => [
-            'class' => 'app\modules\auth\Module'
+                    'class' => 'app\modules\auth\Module',
+                    'components' => [
+                        'rbac' => RbacComponent::class
+                    ]
         ],
 * Add this to console.php 'modules' section:
 
