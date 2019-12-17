@@ -44,9 +44,9 @@ class RbacController extends Controller
         $editAllArticles->description = 'Blog module articles deleting';
         $auth->add($editAllArticles);
 
-        $adminArticlesPermissions = $auth->createPermission('adminArticlesPermissions');
-        $adminArticlesPermissions->description = 'Blog module admin articles permissions';
-        $auth->add($adminArticlesPermissions);
+        $adminPermissions = $auth->createPermission('adminPermissions');
+        $adminPermissions->description = 'Blog module admin permissions';
+        $auth->add($adminPermissions);
 
         echo 'Permissions added...' . PHP_EOL;
 
@@ -56,7 +56,7 @@ class RbacController extends Controller
         $auth->addChild($editor, $user);
         $auth->addChild($editor, $editAllArticles);
         $auth->addChild($admin, $editor);
-        $auth->addChild($admin, $adminArticlesPermissions);
+        $auth->addChild($admin, $adminPermissions);
 
         echo 'Permissions assigned...' . PHP_EOL;
 
