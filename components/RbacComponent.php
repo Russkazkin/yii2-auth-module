@@ -47,7 +47,6 @@ class RbacComponent extends BaseObject
         if (Yii::$app->user->can('editOwnArticle', ['article' => $article])) {
             return true;
         }
-
         return false;
     }
 }
