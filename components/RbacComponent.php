@@ -13,4 +13,9 @@ class RbacComponent extends BaseObject
     {
         return Yii::$app->user->can('adminPermissions');
     }
+
+    public function canCreateArticle() : bool
+    {
+        return Yii::$app->user->can('createArticle');
+    }
 }

@@ -41,11 +41,11 @@ class RbacController extends Controller
         $auth->add($deleteOwnArticle);
 
         $editAllArticles = $auth->createPermission('editAllArticles');
-        $editAllArticles->description = 'Blog module articles deleting';
+        $editAllArticles->description = 'Blog module articles editing';
         $auth->add($editAllArticles);
 
         $adminPermissions = $auth->createPermission('adminPermissions');
-        $adminPermissions->description = 'Blog module admin permissions';
+        $adminPermissions->description = 'Admin permissions';
         $auth->add($adminPermissions);
 
         echo 'Permissions added...' . PHP_EOL;
