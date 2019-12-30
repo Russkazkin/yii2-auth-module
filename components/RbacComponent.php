@@ -37,4 +37,17 @@ class RbacComponent extends BaseObject
 
         return false;
     }
+
+    public function canEditArticle(Article $article) : bool
+    {
+        if (Yii::$app->user->can('editorPermissions')) {
+            return true;
+        }
+
+        if (Yii::$app->user->can('editOwnArticle', ['article' => $article])) {
+            return true;
+        }
+
+        return false;
+    }
 }
