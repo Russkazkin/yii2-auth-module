@@ -4,6 +4,7 @@
 namespace app\modules\auth\commands;
 
 
+use app\modules\auth\rules\AuthorRule;
 use Yii;
 use yii\console\Controller;
 
@@ -28,12 +29,16 @@ class RbacController extends Controller
 
         echo 'Users added...' . PHP_EOL;
 
+        $isAuthor = new AuthorRule();
+        $auth->add($isAuthor);
+
         $createArticle = $auth->createPermission('createArticle');
         $createArticle->description = 'Blog module articles creation';
         $auth->add($createArticle);
 
         $viewOwnArticle = $auth->createPermission('viewOwnArticle');
         $viewOwnArticle->description = 'Blog module user articles admin view';
+        $viewOwnArticle->ruleName = $isAuthor->name;
         $auth->add($viewOwnArticle);
 
         $editOwnArticle = $auth->createPermission('editOwnArticle');
