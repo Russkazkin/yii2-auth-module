@@ -43,6 +43,7 @@ class RbacController extends Controller
 
         $editOwnArticle = $auth->createPermission('editOwnArticle');
         $editOwnArticle->description = 'Blog module user articles editing';
+        $editOwnArticle->ruleName = $isAuthor->name;
         $auth->add($editOwnArticle);
 
         $deleteOwnArticle = $auth->createPermission('deleteOwnArticle');
