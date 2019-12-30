@@ -32,6 +32,10 @@ class RbacController extends Controller
         $createArticle->description = 'Blog module articles creation';
         $auth->add($createArticle);
 
+        $viewOwnArticle = $auth->createPermission('viewOwnArticle');
+        $viewOwnArticle->description = 'Blog module user articles admin view';
+        $auth->add($viewOwnArticle);
+
         $editOwnArticle = $auth->createPermission('editOwnArticle');
         $editOwnArticle->description = 'Blog module user articles editing';
         $auth->add($editOwnArticle);
@@ -48,13 +52,19 @@ class RbacController extends Controller
         $adminPermissions->description = 'Admin permissions';
         $auth->add($adminPermissions);
 
+        $editorPermissions = $auth->createPermission('editorPermissions');
+        $editorPermissions->description = 'Editor permissions';
+        $auth->add($editorPermissions);
+
         echo 'Permissions added...' . PHP_EOL;
 
         $auth->addChild($user, $createArticle);
+        $auth->addChild($user, $viewOwnArticle);
         $auth->addChild($user, $editOwnArticle);
         $auth->addChild($user, $deleteOwnArticle);
         $auth->addChild($editor, $user);
         $auth->addChild($editor, $editAllArticles);
+        $auth->addChild($editor, $editorPermissions);
         $auth->addChild($admin, $editor);
         $auth->addChild($admin, $adminPermissions);
 
