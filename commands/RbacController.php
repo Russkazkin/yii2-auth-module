@@ -41,6 +41,11 @@ class RbacController extends Controller
         $viewOwnArticle->ruleName = $isAuthor->name;
         $auth->add($viewOwnArticle);
 
+        $hideOwnArticle = $auth->createPermission('hideOwnArticle');
+        $hideOwnArticle->description = 'Blog module user articles admin hiding';
+        $hideOwnArticle->ruleName = $isAuthor->name;
+        $auth->add($hideOwnArticle);
+
         $editOwnArticle = $auth->createPermission('editOwnArticle');
         $editOwnArticle->description = 'Blog module user articles editing';
         $editOwnArticle->ruleName = $isAuthor->name;
@@ -48,6 +53,7 @@ class RbacController extends Controller
 
         $deleteOwnArticle = $auth->createPermission('deleteOwnArticle');
         $deleteOwnArticle->description = 'Blog module user articles deleting';
+        $deleteOwnArticle->ruleName = $isAuthor->name;
         $auth->add($deleteOwnArticle);
 
         $editAllArticles = $auth->createPermission('editAllArticles');
@@ -67,9 +73,10 @@ class RbacController extends Controller
         $auth->addChild($user, $createArticle);
         $auth->addChild($user, $viewOwnArticle);
         $auth->addChild($user, $editOwnArticle);
-        $auth->addChild($user, $deleteOwnArticle);
+        $auth->addChild($user, $hideOwnArticle);
         $auth->addChild($editor, $user);
         $auth->addChild($editor, $editAllArticles);
+        $auth->addChild($editor, $deleteOwnArticle);
         $auth->addChild($editor, $editorPermissions);
         $auth->addChild($admin, $editor);
         $auth->addChild($admin, $adminPermissions);
