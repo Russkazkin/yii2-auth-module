@@ -49,4 +49,16 @@ class RbacComponent extends BaseObject
         }
         return false;
     }
+
+    public function canDeleteArticle(Article $article) : bool
+    {
+        if (Yii::$app->user->can('adminPermissions')) {
+            return true;
+        }
+
+        if (Yii::$app->user->can('deleteOwnArticle', ['article' => $article])) {
+            return true;
+        }
+        return false;
+    }
 }
