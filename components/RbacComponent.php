@@ -61,4 +61,16 @@ class RbacComponent extends BaseObject
         }
         return false;
     }
+
+    public function canHideArticle(Article $article) : bool
+    {
+        if (Yii::$app->user->can('editorPermissions')) {
+            return true;
+        }
+
+        if (Yii::$app->user->can('hideOwnArticle', ['article' => $article])) {
+            return true;
+        }
+        return false;
+    }
 }
